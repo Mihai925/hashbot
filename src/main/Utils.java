@@ -6,7 +6,7 @@ import expressions.*;
 
 public class Utils {
 
-
+	public static int x_value;
 	private static boolean isTerminal(Expression exp) {
 		return isNum(exp) || isVar(exp);
 	}

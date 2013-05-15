@@ -9,7 +9,7 @@ public class Num extends Expression {
 	}
 	
 	@Override
-	public int compute() {
+	public int compute(int x_value) {
 		return value;
 	}
 	

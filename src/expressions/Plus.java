@@ -8,8 +8,8 @@ public class Plus extends Expression {
 	}
 
 	@Override
-	public int compute() {
-		return left.compute() + right.compute();
+	public int compute(int x_value) {
+		return left.compute(x_value) + right.compute(x_value);
 	}
 	
 

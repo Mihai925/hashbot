@@ -44,9 +44,9 @@ public class ExpressionFactory {
 		case 5:
 			return new XOR(left, right);
 		case 6:
-			return new ShiftLeft(left, right);
+			return new AND(left, right);
 		case 7:
-			return new ShiftRight(left, right);
+			return new OR(left, right);
 		default:
 			return null;
 		}
