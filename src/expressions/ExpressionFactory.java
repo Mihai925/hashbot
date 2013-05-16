@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class ExpressionFactory {
 	final static int MAXVAL = 1 << 18;
-	final static int EXPTYPES = 7;
+	final static int EXPTYPES = 6;
 	static Random generator = new Random();
 	
 	public static Num getNum() {
@@ -15,7 +15,7 @@ public class ExpressionFactory {
 		return new Var("x");
 	}
 	
-	public static Expression randomExpression(int maxDepth, String varName) {
+	public static Expression randomExpression(int maxDepth) {
 		
 		int chance = (1 + generator.nextInt(maxDepth));
 
@@ -27,8 +27,8 @@ public class ExpressionFactory {
 			return getNum();
 		}
 
-		Expression left = randomExpression(maxDepth - 1, varName);
-		Expression right = randomExpression(maxDepth - 1, varName);
+		Expression left = randomExpression(maxDepth - 1);
+		Expression right = randomExpression(maxDepth - 1);
 
 		chance = generator.nextInt(EXPTYPES) + 1;
 
@@ -40,12 +40,10 @@ public class ExpressionFactory {
 		case 3:
 			return new Times(left, right);
 		case 4:
-			return new Division(left, right);
-		case 5:
 			return new XOR(left, right);
-		case 6:
+		case 5:
 			return new AND(left, right);
-		case 7:
+		case 6:
 			return new OR(left, right);
 		default:
 			return null;

@@ -35,7 +35,7 @@ public abstract class Expression {
 
 	@Override
 	public String toString() {
-		return left + symbol + right;
+		return "(" + left + symbol + right + ")";
 	}
 	
 }
